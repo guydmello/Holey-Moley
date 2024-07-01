@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Holey-Moley/static/css/main.7aaa4f45.css",
-    "main.js": "/Holey-Moley/static/js/main.c4422b35.js",
+    "main.css": "/Holey-Moley/static/css/main.1ba6e58a.css",
+    "main.js": "/Holey-Moley/static/js/main.5c0658da.js",
     "static/js/453.87349bcf.chunk.js": "/Holey-Moley/static/js/453.87349bcf.chunk.js",
     "index.html": "/Holey-Moley/index.html",
-    "main.7aaa4f45.css.map": "/Holey-Moley/static/css/main.7aaa4f45.css.map",
-    "main.c4422b35.js.map": "/Holey-Moley/static/js/main.c4422b35.js.map",
+    "main.1ba6e58a.css.map": "/Holey-Moley/static/css/main.1ba6e58a.css.map",
+    "main.5c0658da.js.map": "/Holey-Moley/static/js/main.5c0658da.js.map",
     "453.87349bcf.chunk.js.map": "/Holey-Moley/static/js/453.87349bcf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7aaa4f45.css",
-    "static/js/main.c4422b35.js"
+    "static/css/main.1ba6e58a.css",
+    "static/js/main.5c0658da.js"
   ]
 }
