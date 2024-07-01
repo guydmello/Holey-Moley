@@ -8,24 +8,48 @@ const themes = {
   countries: ["Canada", "Brazil", "France", "Germany", "Australia", "Japan", "India", "China", "Russia", "Italy", "Mexico", "Spain"],
   sports: ["soccer", "basketball", "baseball", "tennis", "cricket", "hockey", "golf", "boxing", "rugby", "swimming", "cycling", "skiing"],
   movies: ["Inception", "Titanic", "Avatar", "Gladiator", "Joker", "Interstellar", "Frozen", "Coco", "Up", "Braveheart", "Rocky", "Matrix"],
-  books: ["1984", "MobyDick", "Hamlet", "PrideAndPrejudice", "Ulysses", "Frankenstein", "Dracula", "JaneEyre", "Macbeth", "Odyssey", "Inferno", "DonQuixote"],
   colors: ["red", "blue", "green", "yellow", "orange", "purple", "pink", "brown", "black", "white", "gray", "cyan"],
-  cities: ["NewYork", "LosAngeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "SanAntonio", "SanDiego", "Dallas", "SanJose", "Austin", "Jacksonville"],
-  music: ["Rock", "Pop", "Jazz", "Classical", "HipHop", "Country", "Blues", "Reggae", "Metal", "Folk", "Disco", "Opera"],
+  cities: ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego", "Dallas", "San Jose", "Austin", "Jacksonville"],
+  music: ["Rock", "Pop", "Jazz", "Classical", "Hip Hop", "Country", "Blues", "Reggae", "Metal", "Folk", "Disco", "Opera"],
   vegetables: ["carrot", "broccoli", "cauliflower", "spinach", "potato", "tomato", "onion", "lettuce", "pepper", "cucumber", "zucchini", "garlic"],
   planets: ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto", "Eris", "Haumea", "Makemake"],
   instruments: ["guitar", "piano", "violin", "drum", "flute", "trumpet", "saxophone", "cello", "clarinet", "trombone", "harp", "tuba"],
   elements: ["hydrogen", "helium", "lithium", "beryllium", "boron", "carbon", "nitrogen", "oxygen", "fluorine", "neon", "sodium", "magnesium"],
   flowers: ["rose", "tulip", "daisy", "sunflower", "orchid", "lily", "daffodil", "jasmine", "violet", "lavender", "peony", "chrysanthemum"],
-  desserts: ["cake", "icecream", "brownie", "pudding", "pie", "cookie", "donut", "muffin", "tart", "cheesecake", "eclair", "cupcake"],
-  tools: ["hammer", "wrench", "screwdriver", "pliers", "drill", "saw", "chisel", "file", "level", "tape", "measure", "clamp"],
+  desserts: ["cake", "ice cream", "brownie", "pudding", "pie", "cookie", "donut", "muffin", "tart", "cheesecake", "eclair", "cupcake"],
+  tools: ["hammer", "wrench", "screwdriver", "pliers", "drill", "saw", "chisel", "file", "level", "tape measure", "clamp"],
   furniture: ["chair", "table", "sofa", "bed", "dresser", "cabinet", "desk", "shelf", "stool", "bench", "wardrobe", "armchair"],
-  beverages: ["coffee", "tea", "milk", "juice", "soda", "water", "wine", "beer", "smoothie", "lemonade", "cocktail", "champagne"]
+  beverages: ["coffee", "tea", "milk", "juice", "soda", "water", "wine", "beer", "smoothie", "lemonade", "cocktail", "champagne"],
+  occupations: ["doctor", "teacher", "engineer", "nurse", "artist", "chef", "pilot", "lawyer", "plumber", "firefighter", "police", "scientist"],
+  weather: ["rain", "snow", "sunny", "cloudy", "storm", "windy", "foggy", "hail", "thunder", "lightning", "tornado", "blizzard"],
+  shapes: ["circle", "square", "triangle", "rectangle", "hexagon", "octagon", "oval", "star", "diamond", "pentagon", "heart", "crescent"],
+  birds: ["sparrow", "eagle", "parrot", "pigeon", "owl", "flamingo", "peacock", "crow", "swan", "hawk", "penguin", "robin"],
+  insects: ["butterfly", "ant", "bee", "beetle", "dragonfly", "mosquito", "spider", "ladybug", "grasshopper", "fly", "wasp", "caterpillar"],
+  jewelry: ["necklace", "ring", "bracelet", "earring", "watch", "pendant", "brooch", "bangle", "anklet", "choker", "cufflink", "tiara"],
+  trees: ["oak", "pine", "maple", "willow", "birch", "cedar", "spruce", "cherry", "apple", "walnut", "palm", "baobab"],
+  historicalFigures: ["Einstein", "Cleopatra", "Gandhi", "Lincoln", "Napoleon", "Da Vinci", "Aristotle", "Shakespeare", "Newton", "Curie", "Columbus", "Mozart"],
+  continents: ["Africa", "Asia", "Europe", "North America", "South America", "Australia", "Antarctica"],
+  gemstones: ["diamond", "ruby", "sapphire", "emerald", "amethyst", "opal", "topaz", "turquoise", "garnet", "jade", "pearl", "aquamarine"],
+  superheroes: ["Superman", "Batman", "Spiderman", "Ironman", "Wonder Woman", "Hulk", "Thor", "Captain America", "Flash", "Green Lantern", "Aquaman", "Black Panther"],
+  mythicalCreatures: ["dragon", "unicorn", "phoenix", "griffin", "centaur", "mermaid", "vampire", "werewolf", "cyclops", "minotaur", "troll", "fairy"],
+  hobbies: ["reading", "painting", "hiking", "knitting", "gardening", "fishing", "cooking", "cycling", "photography", "writing", "dancing", "drawing"],
+  fairyTales: ["Cinderella", "Snow White", "Sleeping Beauty", "Little Red Riding Hood", "Hansel and Gretel", "Jack and the Beanstalk", "Beauty and the Beast", "Rapunzel", "The Little Mermaid", "Aladdin", "Pinocchio", "Peter Pan"],
+  professions: ["doctor", "teacher", "engineer", "nurse", "artist", "chef", "pilot", "lawyer", "plumber", "firefighter", "police", "scientist"],
+  kitchenAppliances: ["oven", "microwave", "blender", "toaster", "refrigerator", "dishwasher", "mixer", "grill", "freezer", "coffee maker", "stove", "kettle"],
+  boardGames: ["Monopoly", "Chess", "Checkers", "Scrabble", "Clue", "Risk", "Catan", "Candy Land", "Sorry", "Life", "Battleship", "Jenga"],
+  modesOfTransport: ["bicycle", "car", "bus", "train", "airplane", "boat", "scooter", "motorcycle", "tram", "subway", "helicopter", "ferry"],
+  mythicalGods: ["Zeus", "Hera", "Odin", "Thor", "Poseidon", "Athena", "Ares", "Apollo", "Hades", "Loki", "Hermes", "Dionysus"],
+  danceStyles: ["ballet", "jazz", "tap", "hip hop", "salsa", "tango", "waltz", "breakdance", "flamenco", "swing", "contemporary", "folk"],
+  spaceObjects: ["star", "planet", "comet", "asteroid", "meteor", "nebula", "galaxy", "black hole", "moon", "quasar", "supernova", "pulsar"],
+  seaCreatures: ["shark", "dolphin", "whale", "octopus", "jellyfish", "starfish", "seahorse", "crab", "lobster", "shrimp", "seal", "sea turtle"],
+  materials: ["wood", "metal", "plastic", "glass", "ceramic", "cloth", "paper", "rubber", "leather", "stone", "concrete", "fabric"],
+  famousLandmarks: ["Eiffel Tower", "Great Wall", "Statue of Liberty", "Colosseum", "Taj Mahal", "Machu Picchu", "Pyramids", "Big Ben", "Sydney Opera House", "Mount Rushmore", "Christ the Redeemer", "Stonehenge"]
 };
 
+
 function assignRoles(players) {
-  const numMoles = Math.floor(Math.random() * 4);
-  const roles = Array(numMoles).fill("mole").concat(Array(players.length - numMoles).fill("word_knower"));
+  const numMoles = Math.floor(Math.random() * 2) + 1; // Always between 1 and 2 moles
+  const roles = Array(numMoles).fill("mole").concat(Array(players.length - numMoles).fill("detective"));
   return roles.sort(() => Math.random() - 0.5).reduce((acc, role, index) => {
     acc[players[index]] = role;
     return acc;
@@ -47,14 +71,12 @@ function App() {
   const [word, setWord] = useState("");
   const [scores, setScores] = useState({});
   const [currentPlayerIndex, setCurrentPlayerIndex] = useState(0);
-  const [showBoard, setShowBoard] = useState(false);
+  const [screen, setScreen] = useState("start"); // 'start', 'player-role', 'board', 'reveal', 'add-points'
   const [readyToProceed, setReadyToProceed] = useState(false);
-  const [showRevealScreen, setShowRevealScreen] = useState(false);
-  const [showAddPoints, setShowAddPoints] = useState(false);
-  const [gameStarted, setGameStarted] = useState(false);
+  const [showRole, setShowRole] = useState(false);
 
   useEffect(() => {
-    if (gameStarted) {
+    if (screen === "player-role") {
       const initialPlayers = Array.from({ length: numPlayers }, (_, i) => `Player ${i + 1}`);
       setPlayers(initialPlayers);
       setRoles(assignRoles(initialPlayers));
@@ -68,32 +90,36 @@ function App() {
         return acc;
       }, {}));
     }
-  }, [numPlayers, gameStarted]);
+  }, [numPlayers, screen]);
 
   const handleNextTurn = () => {
     if (!readyToProceed) {
       setReadyToProceed(true);
     } else {
-      setCurrentPlayerIndex((prevIndex) => (prevIndex + 1) % players.length);
-      setReadyToProceed(false);
       if (currentPlayerIndex + 1 >= players.length) {
-        setShowBoard(true);
+        setScreen("board");
+      } else {
+        setCurrentPlayerIndex((prevIndex) => prevIndex + 1);
+        setReadyToProceed(false);
+        setShowRole(false);
       }
     }
   };
 
+  const handleRevealRole = () => {
+    setShowRole(true);
+  };
+
   const handleReveal = () => {
-    setShowBoard(false);
-    setShowRevealScreen(true);
+    setScreen("reveal");
   };
 
   const handleAddPoints = () => {
-    setShowRevealScreen(false);
-    setShowAddPoints(true);
+    setScreen("add-points");
   };
 
   const handleSkipPoints = () => {
-    setShowAddPoints(false);
+    setScreen("player-role");
     resetGame();
   };
 
@@ -119,10 +145,9 @@ function App() {
     setBoard(createBoard(words));
     setRoles(assignRoles(players));
     setCurrentPlayerIndex(0);
-    setShowBoard(false);
+    setScreen("player-role");
     setReadyToProceed(false);
-    setShowRevealScreen(false);
-    setShowAddPoints(false);
+    setShowRole(false);
   };
 
   const handlePlayerCountChange = (event) => {
@@ -131,7 +156,7 @@ function App() {
 
   const handleStartGame = () => {
     localStorage.setItem('numPlayers', numPlayers);
-    setGameStarted(true);
+    setScreen("player-role");
   };
 
   const handleResetPlayers = () => {
@@ -145,16 +170,14 @@ function App() {
     setWord("");
     setScores({});
     setCurrentPlayerIndex(0);
-    setShowBoard(false);
+    setScreen("start");
     setReadyToProceed(false);
-    setShowRevealScreen(false);
-    setShowAddPoints(false);
-    setGameStarted(false);
+    setShowRole(false);
   };
 
   return (
     <div className="App">
-      {!gameStarted ? (
+      {screen === "start" && (
         <div className="start-screen">
           <h1>Holey Moley</h1>
           <div className="player-slider">
@@ -171,67 +194,71 @@ function App() {
             <button onClick={handleStartGame}>Start Game</button>
           </div>
         </div>
-      ) : (
-        <>
-          {showAddPoints ? (
-            <div>
-              <h1>Scores</h1>
-              {Object.entries(scores).map(([player, score]) => (
-                <div key={player}>
-                  {player}: {score}
-                  <button onClick={() => handleAddPoint(player)}>Add Point</button>
-                  <button onClick={() => handleDeductPoint(player)}>Deduct Point</button>
-                </div>
-              ))}
-              <button onClick={handleSkipPoints}>Skip</button>
-              <button onClick={resetGame}>Next</button>
-              <button
-                onClick={handleResetPlayers}
-                style={{ position: 'absolute', bottom: '10px', right: '10px' }}
-              >
-                Reset Players and Game
-              </button>
-            </div>
-          ) : showRevealScreen ? (
-            <div>
-              <h1>The word was: {word}</h1>
-              {Object.entries(roles).map(([player, role]) => (
-                <div key={player}>
-                  {player} was a {role}
-                </div>
-              ))}
-              <button onClick={handleAddPoints}>Next</button>
-            </div>
-          ) : (
-            <div>
-              {showBoard ? (
-                <div>
-                  <h1>Game Board for the theme '{theme}':</h1>
-                  <div className="board">
-                    {board.map((row, rowIndex) => (
-                      <div className="board-row" key={rowIndex}>
-                        {row.map((word, wordIndex) => (
-                          <div className="board-cell" key={wordIndex}>
-                            {word}
-                          </div>
-                        ))}
-                      </div>
-                    ))}
-                  </div>
-                  <button onClick={handleReveal}>Next</button>
-                </div>
+      )}
+      {screen === "player-role" && (
+        <div className="player-role-screen">
+          <h1>{players[currentPlayerIndex]}, are you ready for your turn?</h1>
+          {readyToProceed && (
+            <h2>
+              {showRole ? (
+                roles[players[currentPlayerIndex]] === 'mole' ? 'You are the mole.' : `The word is '${word}'.`
               ) : (
-                <div>
-                  <h1>{players[currentPlayerIndex]}, are you ready for your turn?</h1>
-                  {readyToProceed && (
-                    <h2>{roles[players[currentPlayerIndex]] === 'mole' ? 'You are the mole.' : `The word is '${word}'.`}</h2>
-                  )}
-                  <button onClick={handleNextTurn}>Next</button>
-                </div>
+                <button onClick={handleRevealRole}>Reveal Role</button>
               )}
-            </div>
+            </h2>
           )}
-        </>
+          <button onClick={handleNextTurn}>Next</button>
+        </div>
+      )}
+      {screen === "board" && (
+        <div className="board-screen">
+          <h1>Game Board for the theme '{theme}':</h1>
+          <div className="board">
+            {board.map((row, rowIndex) => (
+              <React.Fragment key={rowIndex}>
+                {row.map((word, wordIndex) => (
+                  <div className="board-cell" key={wordIndex}>
+                    {word}
+                  </div>
+                ))}
+              </React.Fragment>
+            ))}
+          </div>
+          <button onClick={handleReveal}>Next</button>
+        </div>
+      )}
+      {screen === "reveal" && (
+        <div className="reveal-screen">
+          <h1>The word was: {word}</h1>
+          {Object.entries(roles).map(([player, role]) => (
+            <div key={player}>
+              {player} was a {role}
+            </div>
+          ))}
+          <button onClick={handleAddPoints}>Next</button>
+        </div>
+      )}
+      {screen === "add-points" && (
+        <div className="score-screen">
+          <h1>Scores</h1>
+          {Object.entries(scores).map(([player, score]) => (
+            <div className="score-item" key={player}>
+              <span>{player}: {score}</span>
+              <div>
+                <button onClick={() => handleAddPoint(player)}>Add Point</button>
+                <button onClick={() => handleDeductPoint(player)}>Deduct Point</button>
+              </div>
+            </div>
+          ))}
+          <button onClick={handleSkipPoints}>Skip</button>
+          <button onClick={resetGame}>Next</button>
+          <button
+            onClick={handleResetPlayers}
+            style={{ position: 'absolute', bottom: '10px', right: '10px' }}
+          >
+            Reset Players and Game
+          </button>
+        </div>
       )}
     </div>
   );
