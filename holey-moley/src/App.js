@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { io } from 'socket.io-client';
 import './App.css';
+
+const socket = io('', { path: '/api/socket' }); // Connect to the serverless function
 
 const themes = {
   fruits: ["apple", "banana", "cherry", "date", "fig", "grape", "orange", "pear", "melon", "berry", "kiwi", "peach"],
@@ -46,7 +49,6 @@ const themes = {
   famousLandmarks: ["Eiffel Tower", "Great Wall", "Statue of Liberty", "Colosseum", "Taj Mahal", "Machu Picchu", "Pyramids", "Big Ben", "Sydney Opera House", "Mount Rushmore", "Christ the Redeemer", "Stonehenge"]
 };
 
-
 function assignRoles(players) {
   const numMoles = Math.floor(Math.random() * 2) + 1; // Always between 1 and 2 moles
   const roles = Array(numMoles).fill("mole").concat(Array(players.length - numMoles).fill("detective"));
@@ -62,7 +64,10 @@ function createBoard(themeWords) {
 }
 
 function App() {
-  const [numPlayers, setNumPlayers] = useState(localStorage.getItem('numPlayers') || 3);
+  const [roomCode, setRoomCode] = useState('');
+  const [playerName, setPlayerName] = useState('');
+  const [gameStarted, setGameStarted] = useState(false);
+  const [numPlayers, setNumPlayers] = useState(3);
   const [players, setPlayers] = useState([]);
   const [roles, setRoles] = useState({});
   const [theme, setTheme] = useState("");
@@ -76,21 +81,35 @@ function App() {
   const [showRole, setShowRole] = useState(false);
 
   useEffect(() => {
-    if (screen === "player-role") {
-      const initialPlayers = Array.from({ length: numPlayers }, (_, i) => `Player ${i + 1}`);
-      setPlayers(initialPlayers);
-      setRoles(assignRoles(initialPlayers));
+    socket.on('updateRoom', (room) => {
+      setPlayers(room.players);
+    });
+
+    socket.on('gameStarted', (room) => {
+      setGameStarted(true);
+      setRoles(assignRoles(room.players));
       const [randomTheme, words] = Object.entries(themes)[Math.floor(Math.random() * Object.entries(themes).length)];
       setTheme(randomTheme);
       setThemeWords(words);
       setWord(words[Math.floor(Math.random() * words.length)]);
       setBoard(createBoard(words));
-      setScores(initialPlayers.reduce((acc, player) => {
-        acc[player] = 0;
+      setScores(room.players.reduce((acc, player) => {
+        acc[player.name] = 0;
         return acc;
       }, {}));
-    }
-  }, [numPlayers, screen]);
+      setScreen('player-role');
+    });
+
+    socket.on('roomNotFound', () => {
+      alert('Room not found');
+    });
+
+    return () => {
+      socket.off('updateRoom');
+      socket.off('gameStarted');
+      socket.off('roomNotFound');
+    };
+  }, []);
 
   const handleNextTurn = () => {
     if (!readyToProceed) {
@@ -155,8 +174,17 @@ function App() {
   };
 
   const handleStartGame = () => {
-    localStorage.setItem('numPlayers', numPlayers);
-    setScreen("player-role");
+    socket.emit('startGame', roomCode);
+  };
+
+  const handleCreateRoom = () => {
+    socket.emit('createRoom', roomCode, playerName);
+    setScreen('waiting');
+  };
+
+  const handleJoinRoom = () => {
+    socket.emit('joinRoom', roomCode, playerName);
+    setScreen('waiting');
   };
 
   const handleResetPlayers = () => {
@@ -180,28 +208,37 @@ function App() {
       {screen === "start" && (
         <div className="start-screen">
           <h1>Holey Moley</h1>
-          <div className="player-slider">
-            <label>
-              Number of Players: {numPlayers}
-              <input 
-                type="range" 
-                min="1" 
-                max="10" 
-                value={numPlayers} 
-                onChange={handlePlayerCountChange} 
-              />
-            </label>
-            <button onClick={handleStartGame}>Start Game</button>
+          <div>
+            <input
+              type="text"
+              placeholder="Enter Room Code"
+              value={roomCode}
+              onChange={(e) => setRoomCode(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Enter Your Name"
+              value={playerName}
+              onChange={(e) => setPlayerName(e.target.value)}
+            />
+            <button onClick={handleCreateRoom}>Create Room</button>
+            <button onClick={handleJoinRoom}>Join Room</button>
           </div>
+        </div>
+      )}
+      {screen === "waiting" && (
+        <div className="waiting-screen">
+          <h1>Waiting for other players...</h1>
+          <button onClick={handleStartGame}>Start Game</button>
         </div>
       )}
       {screen === "player-role" && (
         <div className="player-role-screen">
-          <h1>{players[currentPlayerIndex]}, are you ready for your turn?</h1>
+          <h1>{players[currentPlayerIndex]?.name}, are you ready for your turn?</h1>
           {readyToProceed && (
             <h2>
               {showRole ? (
-                roles[players[currentPlayerIndex]] === 'mole' ? 'You are the mole.' : `The word is '${word}'.`
+                roles[players[currentPlayerIndex]?.name] === 'mole' ? 'You are the mole.' : `The word is '${word}'.`
               ) : (
                 <button onClick={handleRevealRole}>Reveal Role</button>
               )}
